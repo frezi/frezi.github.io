@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>react | freziStudio</title>
+    <meta name="description" content="你好，这是frezi小站。">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.616a884d.css" as="style"><link rel="preload" href="/assets/js/app.df80f005.js" as="script"><link rel="preload" href="/assets/js/2.4d446315.js" as="script"><link rel="preload" href="/assets/js/14.bc8ddf1f.js" as="script"><link rel="prefetch" href="/assets/js/10.fde606c7.js"><link rel="prefetch" href="/assets/js/11.26a74b5c.js"><link rel="prefetch" href="/assets/js/12.887ce3ae.js"><link rel="prefetch" href="/assets/js/13.63151fe5.js"><link rel="prefetch" href="/assets/js/15.c462b920.js"><link rel="prefetch" href="/assets/js/3.405508df.js"><link rel="prefetch" href="/assets/js/4.e2e0255b.js"><link rel="prefetch" href="/assets/js/5.0bed205f.js"><link rel="prefetch" href="/assets/js/6.54983d61.js"><link rel="prefetch" href="/assets/js/7.a9ce74a0.js"><link rel="prefetch" href="/assets/js/8.63e38d08.js"><link rel="prefetch" href="/assets/js/9.334e6543.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.616a884d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">freziStudio</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>about</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/about/start1.html" class="sidebar-link">关于</a></li><li><a href="/about/start2.html" class="sidebar-link">提醒</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>job</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>learn</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="react"><a href="#react" aria-hidden="true" class="header-anchor">#</a> react</h1> <p>TypeScript 的核心原则之一是对值所具有的结构进行类型检查。它有时被称做“鸭式辨型法”或“结构性子类型化”。 在 TypeScript 里，接口的作用就是为这些类型命名和为你的代码或第三方代码定义契约。</p> <h2 id="接口定义"><a href="#接口定义" aria-hidden="true" class="header-anchor">#</a> 接口定义</h2> <div class="language-typescript extra-class"><pre class="language-typescript"><code>  <span class="token keyword">function</span> <span class="token function">printLabel</span><span class="token punctuation">(</span><span class="token parameter">labelledObj<span class="token punctuation">:</span> <span class="token punctuation">{</span> label<span class="token punctuation">:</span> <span class="token builtin">string</span> <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>labelledObj<span class="token punctuation">.</span>label<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">let</span> myObj <span class="token operator">=</span> <span class="token punctuation">{</span> size<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> label<span class="token punctuation">:</span> <span class="token string">'Size 10 Object'</span> <span class="token punctuation">}</span>
+  <span class="token function">printLabel</span><span class="token punctuation">(</span>myObj<span class="token punctuation">)</span>
+</code></pre></div><p>类型检查器查看<code>printLabel</code> 的调用。 <code>printLabel</code> 有一个参数，并要求这个对象参数有一个名为<code>label</code>类型为<code>string</code>的属性。如果传入参数不是这个要求 多传或者少传都会报错。</p> <p>使用接口来定义上面的例子必须包含<code>label 并且类型为</code>string`</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>  <span class="token keyword">interface</span> <span class="token class-name">LabelValue</span> <span class="token punctuation">{</span>
+     label<span class="token punctuation">:</span> <span class="token builtin">string</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">function</span> <span class="token function">printLabel</span><span class="token punctuation">(</span><span class="token parameter">labelObj<span class="token punctuation">:</span>LabelValue</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>labelObj<span class="token punctuation">.</span>label<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">let</span> myObj <span class="token operator">=</span> <span class="token punctuation">{</span>size<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> label<span class="token punctuation">:</span> <span class="token string">'Size 10 Object'</span><span class="token punctuation">}</span>
+  <span class="token function">printLabel</span><span class="token punctuation">(</span>myObj<span class="token punctuation">)</span> <span class="token comment">//error</span>
+</code></pre></div><p><code>LabelValue</code> 接口名 定义了接口所需要的字段 如果比他多或者少都会报错  必须满足接口定义的形式</p> <h2 id="可选属性"><a href="#可选属性" aria-hidden="true" class="header-anchor">#</a> 可选属性</h2> <p>有时候我们定义接口不一定都是必须的 有可选属性</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>
+<span class="token keyword">interface</span> <span class="token class-name">Square</span> <span class="token punctuation">{</span>
+  color<span class="token punctuation">:</span> <span class="token builtin">string</span>
+  area<span class="token punctuation">:</span> <span class="token builtin">number</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">SquareConfig</span><span class="token punctuation">{</span>
+  color<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token builtin">string</span>
+  width<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token builtin">number</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">createSquare</span> <span class="token punctuation">(</span><span class="token parameter">config<span class="token punctuation">:</span> SquareConfig</span><span class="token punctuation">)</span><span class="token punctuation">:</span>Square<span class="token punctuation">{</span>
+  <span class="token keyword">let</span> newSquare <span class="token operator">=</span> <span class="token punctuation">{</span>color<span class="token punctuation">:</span> <span class="token string">'white'</span><span class="token punctuation">,</span> area<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>config<span class="token punctuation">.</span>color<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    newSquare<span class="token punctuation">.</span>color <span class="token operator">=</span> config<span class="token punctuation">.</span>color
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>config<span class="token punctuation">.</span>width<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    newSquare<span class="token punctuation">.</span>area <span class="token operator">=</span> config<span class="token punctuation">.</span>width <span class="token operator">*</span> config<span class="token punctuation">.</span>width
+  <span class="token punctuation">}</span>
+   <span class="token keyword">return</span> newSquare
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> mySquare <span class="token operator">=</span> <span class="token function">createSquare</span><span class="token punctuation">(</span><span class="token punctuation">{</span>color<span class="token punctuation">:</span> <span class="token string">'black'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>可选属性的接口的属性只需要在属性后面加个<code>?</code>符号就代表可选属性</p> <h2 id="只读属性"><a href="#只读属性" aria-hidden="true" class="header-anchor">#</a> 只读属性</h2> <p>一些对象属性只能在对象刚刚创建的时候修改其值。 你可以在属性名前用 <code>readonly</code> 来指定只读属性:</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
+  <span class="token keyword">readonly</span> x<span class="token punctuation">:</span> <span class="token builtin">number</span>
+  <span class="token keyword">readonly</span> y<span class="token punctuation">:</span> <span class="token builtin">number</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>你可以通过赋值一个对象字面量来构造一个 <code>Point</code>。 赋值后，<code>x</code> 和 <code>y</code> 再也不能被改变了。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">let</span> p1<span class="token punctuation">:</span> Point <span class="token operator">=</span> <span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">20</span> <span class="token punctuation">}</span>
+p1<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">5</span> <span class="token comment">// error!</span>
+</code></pre></div><h3 id="readonly-vs-const"><a href="#readonly-vs-const" aria-hidden="true" class="header-anchor">#</a> readonly vs const</h3> <p>最简单判断该用 <code>readonly</code> 还是 <code>const</code> 的方法是看要把它做为变量使用还是做为一个属性。 做为变量使用的话用 <code>const</code>，若做为属性则使用 <code>readonly</code>。</p> <h2 id="未知属性定义"><a href="#未知属性定义" aria-hidden="true" class="header-anchor">#</a> 未知属性定义</h2> <p>定义接口未知属性可以用 <code>[propName:stirng]:any</code> 来定义</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">SquareConfig</span> <span class="token punctuation">{</span>
+  color<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token builtin">string</span>
+  width<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token builtin">number</span>
+  <span class="token punctuation">[</span>propName<span class="token punctuation">:</span> <span class="token builtin">string</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token builtin">any</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="函数类型"><a href="#函数类型" aria-hidden="true" class="header-anchor">#</a> 函数类型</h2> <p>接口能够描述 JavaScript 中对象拥有的各种各样的外形。 除了描述带有属性的普通对象外，接口也可以描述函数类型。</p> <p>为了使用接口表示函数类型，我们需要给接口定义一个调用签名。它就像是一个只有参数列表和返回值类型的函数定义。参数列表里的每个参数都需要名字和类型。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">SearchFunc</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">(</span>source<span class="token punctuation">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> subString<span class="token punctuation">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token builtin">boolean</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这样定义后，我们可以像使用其它接口一样使用这个函数类型的接口。 下例展示了如何创建一个函数类型的变量，并将一个同类型的函数赋值给这个变量。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>
+<span class="token keyword">let</span> mySearch<span class="token punctuation">:</span> SearchFunc 
+<span class="token function-variable function">mySearch</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">src<span class="token punctuation">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> sub<span class="token punctuation">:</span> <span class="token builtin">string</span></span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token builtin">boolean</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> result <span class="token operator">=</span> source<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span>subString<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> result <span class="token operator">&gt;</span> <span class="token operator">-</span><span class="token number">1</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>对于函数类型的类型检查来说，函数的参数名不需要与接口里定义的名字相匹配。</p> <p>不想指定类型，TypeScript 的类型系统会推断出参数类型，因为函数直接赋值给了  <code>SearchFunc</code> 类型变量。 函数的返回值类型是通过其返回值推断出来的（此例是 <code>false</code> 和 <code>true</code>）。如果让这个函数返回数字或字符串，类型检查器会警告我们函数的返回值类型与 <code>SearchFunc</code> 接口中的定义不匹配。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">let</span> mySearch<span class="token punctuation">:</span> SearchFunc
+<span class="token function-variable function">mySearch</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">src<span class="token punctuation">,</span> sub</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> result <span class="token operator">=</span> src<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span>sub<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> result <span class="token operator">&gt;</span> <span class="token operator">-</span><span class="token number">1</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="可索引的类型"><a href="#可索引的类型" aria-hidden="true" class="header-anchor">#</a> 可索引的类型</h2> <p>与使用接口描述函数类型差不多，我们也可以描述那些能够“通过索引得到”的类型，比如 <code>a[10]</code> 或 <code>ageMap['daniel']</code>。 可索引类型具有一个 索引签名，它描述了对象索引的类型，还有相应的索引返回值类型。 让我们看一个例子：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">StringArray</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>index<span class="token punctuation">:</span> <span class="token builtin">number</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> myArray<span class="token punctuation">:</span> StringArray
+myArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Bob'</span><span class="token punctuation">,</span> <span class="token string">'Fred'</span><span class="token punctuation">]</span>
+
+<span class="token keyword">let</span> myStr<span class="token punctuation">:</span> <span class="token builtin">string</span> <span class="token operator">=</span> myArray<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+</code></pre></div><h2 id="类类型"><a href="#类类型" aria-hidden="true" class="header-anchor">#</a> 类类型</h2> <h3 id="实现接口"><a href="#实现接口" aria-hidden="true" class="header-anchor">#</a> 实现接口</h3> <p>与 C# 或 Java 里接口的基本作用一样，TypeScript 也能够用它来明确的强制一个类去符合某种契约。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>
+
+<span class="token keyword">interface</span> <span class="token class-name">ClockInterface</span> <span class="token punctuation">{</span>
+  currentTime<span class="token punctuation">:</span> Date
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Clock</span> <span class="token keyword">implements</span> <span class="token class-name">ClockInterface</span> <span class="token punctuation">{</span>
+  currentTime<span class="token punctuation">:</span> Date
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token parameter">h<span class="token punctuation">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> m<span class="token punctuation">:</span> <span class="token builtin">number</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>接口描述了类的公共部分，而不是公共和私有两部分。 它不会帮你检查类是否具有某些私有成员。</p> <h2 id="高级技巧"><a href="#高级技巧" aria-hidden="true" class="header-anchor">#</a> 高级技巧</h2> <h3 id="构造函数"><a href="#构造函数" aria-hidden="true" class="header-anchor">#</a> 构造函数</h3> <p>TypeScript 里声明了一个类的时候，实际上同时声明了很多东西。首先就是类的<em>实例</em>的类型。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>
+<span class="token keyword">class</span> <span class="token class-name">Greeter</span> <span class="token punctuation">{</span>
+  <span class="token keyword">static</span> standardGreeting <span class="token operator">=</span> <span class="token string">'Hello, there'</span>
+  greeting<span class="token punctuation">:</span> <span class="token builtin">string</span>
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token parameter">message<span class="token punctuation">:</span> <span class="token builtin">string</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>greeting <span class="token operator">=</span> message
+  <span class="token punctuation">}</span>
+  <span class="token function">greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">'Hello, '</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>greeting
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> greeter<span class="token punctuation">:</span> Greeter
+
+greeter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Greeter</span><span class="token punctuation">(</span><span class="token string">'world'</span><span class="token punctuation">)</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>greeter<span class="token punctuation">.</span><span class="token function">greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.df80f005.js" defer></script><script src="/assets/js/2.4d446315.js" defer></script><script src="/assets/js/14.bc8ddf1f.js" defer></script>
+  </body>
+</html>
